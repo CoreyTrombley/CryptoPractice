@@ -38,7 +38,7 @@ end
 class String
   def map_to(map)
     length.times do |i|
-      self[i] = map[self[i]] || self[i]
+      self[i] = map[self[i]] || self[i].upcase
     end
     self
   end

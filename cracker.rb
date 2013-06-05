@@ -9,7 +9,7 @@ class Cracker
   end
 
   def decrypt(guess = {})
-    @cipher_text.map_to(guess)
+    @plain_text = @cipher_text.map_to(guess)
   end
 
   def usage
@@ -23,7 +23,8 @@ if ARGV.length == 1
   c.read_file ARGV[0]
   c.entropy
   # TODO - Update this hash with your guesses to decode the alphabet
-  c.decrypt({})
+  guess = {}
+  puts c.decrypt(guess)
 else
   c.usage
 end
