@@ -4,7 +4,7 @@ module Crypto
   end
 
   module Ciphers
-   def encrypt_ceasar(plain_text)
+   def encrypt_caesar(plain_text)
       cipher = alphabet.rotate(rand(24) + 1)
       substitution = Hash[alphabet.zip(cipher)]
       plain_text.map_to(substitution)

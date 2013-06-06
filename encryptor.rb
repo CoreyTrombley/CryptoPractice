@@ -8,7 +8,7 @@ class Encryptor
     @plain_text = File.open(plain_text_file).read.strip.chomp.downcase
   end
 
-  def encrypt(algorithm = :ceasar)
+  def encrypt(algorithm = :caesar)
     @encrypted = self.send("encrypt_#{algorithm}", @plain_text)
   end
 
@@ -17,7 +17,7 @@ class Encryptor
   end
 
   def usage
-    puts "Usage: ruby encryptor.rb <cipher: ceasar|substitution> <message_file.txt>"
+    puts "Usage: ruby encryptor.rb <cipher: caesar|substitution> <message_file.txt>"
   end
 end
 
